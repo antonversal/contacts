@@ -1,0 +1,33 @@
+#contact-list tr .edit {
+	display: none;
+}
+
+#contact-list tr.editing .edit {
+	display: block;
+}
+
+#contact-list tr.editing .view {
+	display: none;
+}
+
+
+
+#new-contact-form .editing{
+	display: block;	
+}
+
+#new-contact-form .hide{
+	display: none;	
+}
+
+#group-list li .edit {
+	display: none;
+}
+
+#group-list li.editing .edit {
+	display: block;
+}
+
+#group-list li.editing .view {
+	display: none;
+}

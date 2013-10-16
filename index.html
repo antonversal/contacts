@@ -1,0 +1,93 @@
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Contacts</title>
+		
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+
+		<link rel="stylesheet" href="contacts.css">
+	</head>
+	<body>
+		<div id="contacts-app" class="container">
+			<div class="alert alert-info">
+				<strong>Double Click</strong> to edit on contact or group. <strong>Enter</strong> to save. <strong>Esc</strong> to reject changes.
+				If you need fake data press <button type="button" id="fake-data" class="btn btn-success">Fake Data</button>
+			</div>
+			<div class="alert alert-warning">
+				Sorry for gavnocode ;) 
+			</div>
+			<div class="row">
+				<div class="col-xs-2 col-xs-pull-9">
+					
+				</div>
+				<div class="col-xs-9 col-xs-push-3">	
+					<header>
+		      	<h1>Contacts</h1>
+		      	<input id="search-form" type="text" placeholder="Whom to search?">
+		      	<button type="button" class="btn btn-default" id="new-contact"> New contact</a>
+		    	</header>		    	
+		    </div>
+	  	</div>
+			<div class="row">
+				<div class="col-xs-2 col-xs-pull-9">
+					Groups:
+					<ul id="group-list"  class="list-unstyled">
+						<li><a class="allgroup"><label>All</label></a></li>						
+					</ul>
+				</div>
+				<div class="col-xs-9 col-xs-push-3">
+					
+	    		<div id="new-contact-form" class="hide"> 
+	    			
+	    				<input id="new_name" class="edit" type="text" placeholder="Name" />
+	    				<input id="new_surname" class="edit" type="text" placeholder="Surname" />
+	    				<input id="new_phone" class="edit" type="text" placeholder="Phone" />
+	    				<input id="new_group" class="edit" type="text" placeholder="Group" />
+	    			
+	    		</div>
+	    		<table class="table table-hover">
+	  				<thead>
+	          	<tr>
+	            	<th>Name</th>
+	            	<th>Surname</th>
+	            	<th>Phone</th>
+	            	<th>Group</th>
+	            	<th></th>
+	          	</tr>
+	        	</thead>
+	        	<tbody id="contact-list">
+	         
+	         
+	        	</tbody>
+					</table>    	
+				</div>
+    	</div>
+  	</div>
+
+		<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+		<script src="http://underscorejs.org/underscore-min.js"></script>
+		<script src="http://backbonejs.org/backbone-min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.1.0/backbone.localStorage-min.js"></script>		
+		<script src="contacts.js"></script>		
+		<script type="text/template" id="item-template">    	
+          <td class="view"><%- name %></td>
+          <td class="view"><%- surname %></td>
+          <td class="view"><%- phone %></td>
+          <td class="view"><%- group %></td>
+          <td class="view"><button type="button" class="btn btn-danger destroy">Delete</button></td>
+
+          <td class="edit"><input id="name" class="edit" type="text" value="<%- name %>" /></td>
+          <td class="edit"><input id="surname" class="edit" type="text" value="<%- surname %>" /></td>
+          <td class="edit"><input id="phone" class="edit" type="text" value="<%- phone %>" /></td>
+          <td class="edit"><input id="group" class="edit" type="text" value="<%- group %>" /></td>
+          <td class="edit"></td>
+  	</script>
+  	<script type="text/template" id="group-template">    	
+	    <div class="view">
+	      <a class="group " data-cid="<%- cid %>"><label><%- name %></label></a>	      
+	    </div>
+	    <input class="edit" type="text" value="<%- name %>" />
+  	</script>
+	</body>
+</html>
