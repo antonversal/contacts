@@ -1,1 +1,1 @@
-== Application for JS Courses 2013
+Application for JS Courses 2013
